@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/httpRequest.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,8 +13,28 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.red,
+        primaryTextTheme: const TextTheme(
+            titleSmall: TextStyle(
+                color: Colors.black,
+                decoration: TextDecoration.none,
+                height: 1.5)),
+        primaryIconTheme: const IconThemeData(color: Colors.black),
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: const AppBarTheme(
+            color: Colors.white,
+            elevation: 0.0,
+            titleTextStyle: TextStyle(color: Colors.black, fontSize: 18)),
+        tabBarTheme: const TabBarTheme(
+            indicatorSize: TabBarIndicatorSize.label,
+            labelColor: Colors.red,
+            unselectedLabelColor: Colors.black),
+        disabledColor: const Color(0x00f3f3f3),
+        indicatorColor: Colors.white,
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -40,6 +61,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    httpRequest.post();
+    httpRequest.post();
+  }
 
   void _incrementCounter() {
     setState(() {
