@@ -40,9 +40,10 @@ class _DiscoveryBannerState extends State<DiscoveryBanner> {
 
 // 设置定时器
   _setTimer() {
-    _timer = Timer.periodic(const Duration(seconds: 2), (_) {
+    _timer = Timer.periodic(const Duration(seconds: 4), (_) {
       _pageController.animateToPage(_currentIndex + 1,
-          duration: const Duration(milliseconds: 400), curve: Curves.bounceIn);
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.fastOutSlowIn);
     });
   }
 
@@ -91,12 +92,10 @@ class _DiscoveryBannerState extends State<DiscoveryBanner> {
                     startNotification is ScrollStartNotification) {
                   if (startNotification.dragDetails != null) {
                     _timer.cancel();
-                    return true;
                   }
                 } else if (startNotification is ScrollEndNotification) {
                   _timer.cancel();
                   _setTimer();
-                  return false;
                 }
                 return true;
               },
