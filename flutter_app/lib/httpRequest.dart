@@ -5,7 +5,7 @@ class HttpRequest {
   late BaseOptions options;
   HttpRequest([BaseOptions? baseOptions]) {
     baseOptions ??= BaseOptions(
-      baseUrl: "",
+      baseUrl: "http://localhost:3000",
       connectTimeout: 5000,
       receiveTimeout: 3000,
     );
@@ -18,20 +18,14 @@ class HttpRequest {
     }, onError: (DioError e, handler) {
       return handler.next(e); //continue
     }));
-
-    print("======");
   }
 
-  Future get(String path, String s,
+  Future get(String path,
       {queryParameter, Options? options, CancelToken? cancelToken}) async {
     return await dio.get(path,
         queryParameters: queryParameter,
         options: options,
         cancelToken: cancelToken);
-  }
-
-  void post() {
-    print("--------------");
   }
 }
 
