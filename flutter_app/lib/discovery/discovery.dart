@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/discovery/widget/Banner.dart';
+import 'package:flutter_app/discovery/widget/CategoryButton.dart';
+import 'package:flutter_app/discovery/widget/RecommendPlayList.dart';
 
 class Discovery extends StatelessWidget {
   Discovery({Key? key}) : super(key: key);
@@ -17,6 +19,9 @@ class Discovery extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         slivers: [
           DiscoveryBanner(),
+          CategoryButton(),
+          RecommendPlayListHeader(),
+          RecommendPlayListGrid(),
         ],
       ),
     );
