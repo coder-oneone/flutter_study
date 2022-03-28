@@ -10,8 +10,8 @@ class Discovery extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading:
-            IconButton(onPressed: () {}, icon: const Icon(Icons.access_alarm)),
+        leading: IconButton(
+            onPressed: () {}, icon: const Icon(Icons.voicemail_rounded)),
         title: const Text("发现"),
         centerTitle: true,
       ),
