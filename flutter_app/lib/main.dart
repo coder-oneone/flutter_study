@@ -9,6 +9,9 @@ void main() {
       initialState: AppState(
         banners: [],
         recommendPlayList: [],
+        isShowNewSong: false,
+        newAlbumList: [],
+        newSondList: [],
       ));
   runApp(MyApp(
     store: store,

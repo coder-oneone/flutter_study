@@ -19,7 +19,13 @@ class CategoryButton extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CustomIconButton(icon: Icons.date_range_sharp, text: "每日推荐"),
-            CustomIconButton(icon: Icons.date_range_sharp, text: "歌单"),
+            CustomIconButton(
+              icon: Icons.date_range_sharp,
+              text: "歌单",
+              onTap: () {
+                Navigator.pushNamed(context, "/playlistSquare");
+              },
+            ),
             CustomIconButton(icon: Icons.date_range_sharp, text: "排行"),
             CustomIconButton(icon: Icons.date_range_sharp, text: "电台"),
             CustomIconButton(icon: Icons.date_range_sharp, text: "直播"),
