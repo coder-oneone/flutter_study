@@ -101,6 +101,7 @@ class _DiscoveryState extends State<Discovery> {
         .map((song) => SongItem(
             id: song["id"],
             picUrl: song["album"]["picUrl"],
+            mvId: song["mv"],
             name: song["name"],
             artists: (song["artists"] as List)
                 .map((item) =>

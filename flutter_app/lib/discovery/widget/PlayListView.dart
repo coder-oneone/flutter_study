@@ -23,17 +23,15 @@ class _PlaylistViewState extends State<PlaylistView>
   @override
   void initState() {
     _getPlayList();
-    if (_scrollController.hasClients) {
-      _scrollController.addListener(() {
-        if (_hasMore &&
-            (_scrollController.position.pixels ==
-                _scrollController.position.maxScrollExtent) &&
-            !_isLoading) {
-          _isLoading = true;
-          _getPlayList(_playList.length);
-        }
-      });
-    }
+    _scrollController.addListener(() {
+      if (_hasMore &&
+          (_scrollController.position.pixels ==
+              _scrollController.position.maxScrollExtent) &&
+          !_isLoading) {
+        _isLoading = true;
+        _getPlayList(_playList.length);
+      }
+    });
     super.initState();
   }
 

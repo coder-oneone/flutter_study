@@ -215,6 +215,7 @@ class NewSondGrid extends StatelessWidget {
               .sublist(0, 6)
               .map((song) => SongItem(
                   id: song["id"],
+                  mvId: song["mv"],
                   picUrl: song["album"]["picUrl"],
                   name: song["name"],
                   artists: (song["artists"] as List)

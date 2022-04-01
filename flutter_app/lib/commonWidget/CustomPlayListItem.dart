@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/playListDetail/playlistDetail.dart';
 import 'package:flutter_app/utils/handle_count.dart';
 
 class CustomPlayListItem extends StatelessWidget {
@@ -16,7 +18,14 @@ class CustomPlayListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context)
+            .push(CupertinoPageRoute(builder: (BuildContext context) {
+          return PlayListDetailView(
+            id: id,
+          );
+        }));
+      },
       child: Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
