@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class LoadMore extends StatelessWidget {
   final bool noMore;
   LoadMore({this.noMore = false});
-
+  
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
@@ -16,7 +16,7 @@ class LoadMore extends StatelessWidget {
             : Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
+                children: const [
                   Padding(
                     padding: EdgeInsets.only(right: 7.0),
                     child: CupertinoActivityIndicator(

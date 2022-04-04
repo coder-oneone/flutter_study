@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/home/home.dart';
 import 'package:flutter_app/redux/appstate.dart';
+import 'package:flutter_app/redux/models.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 
@@ -12,6 +13,7 @@ void main() {
         isShowNewSong: false,
         newAlbumList: [],
         newSondList: [],
+        playListModel: PlayListModel(id: 0, songList: []),
       ));
   runApp(MyApp(
     store: store,

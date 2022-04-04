@@ -83,8 +83,10 @@ class _DiscoveryBannerState extends State<DiscoveryBanner> {
                             _timer.cancel();
                           }
                         } else if (startNotification is ScrollEndNotification) {
-                          _timer.cancel();
-                          _setTimer();
+                          if(_timer != null) {
+                            _timer.cancel();
+                            _setTimer();
+                          }
                         }
                         return true;
                       },

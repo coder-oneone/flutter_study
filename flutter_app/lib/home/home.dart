@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/home/widget/playerButton.dart';
 
 import '../account/account.dart';
 import '../discovery/discovery.dart';
@@ -23,16 +24,26 @@ class Home extends StatelessWidget {
     Friends(),
     Account(),
   ];
+
   @override
   Widget build(BuildContext context) {
     // BottomNavigationBarItem(icon: Icon(tab["icon"]), label: tab["text"])
-    return CupertinoTabScaffold(
-        tabBar: CupertinoTabBar(
-          activeColor: Theme.of(context).primaryColor,
-          items: _tabs,
-        ),
-        tabBuilder: (BuildContext context, int index) {
-          return _pages[index];
-        });
+    return Stack(
+      children: [
+        CupertinoTabScaffold(
+            tabBar: CupertinoTabBar(
+              activeColor: Theme.of(context).primaryColor,
+              items: _tabs,
+            ),
+            tabBuilder: (BuildContext context, int index) {
+              return _pages[index];
+            }),
+        const Positioned(
+          top: 0,
+          right: 0,
+          child: PlayerButtonView(),
+        )
+      ],
+    );
   }
 }

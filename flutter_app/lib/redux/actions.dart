@@ -1,4 +1,6 @@
 // 设置轮播图
+import 'package:flutter_app/redux/models.dart';
+
 class SetBannersAction {
   List banners;
   SetBannersAction(this.banners);
@@ -26,4 +28,9 @@ class SetAlbumListAction {
 class SetNewSondListAction {
   List newSondList;
   SetNewSondListAction(this.newSondList);
+}
+// 设置新歌
+class SetPalyListModelAction {
+  PlayListModel newSondList;
+  SetPalyListModelAction(this.newSondList);
 }

@@ -1,5 +1,8 @@
 import 'package:flutter_app/redux/actions.dart';
+import 'package:flutter_app/redux/models.dart';
 import 'package:redux/redux.dart';
+
+import '../viewmodel/song_item.dart';
 
 // 设置轮播图
 final bannerReducer =
@@ -38,6 +41,14 @@ List _albumListReducer(List albumList, SetAlbumListAction action) {
 final newSondListReducer = combineReducers<List>(
     [TypedReducer<List, SetNewSondListAction>(_newSondList)]);
 List _newSondList(List newSondList, SetNewSondListAction action) {
+  newSondList = action.newSondList;
+  return newSondList;
+}
+
+// 设置播放列表
+final newSondPlayListReducer = combineReducers<PlayListModel>(
+    [TypedReducer<PlayListModel, SetPalyListModelAction>(_newSondPlayList)]);
+PlayListModel _newSondPlayList(PlayListModel newSondList, SetPalyListModelAction action) {
   newSondList = action.newSondList;
   return newSondList;
 }
